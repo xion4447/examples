@@ -1,0 +1,15 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.provider "docker" do |d|
+
+    d.build_dir = "."
+
+    d.ports = ["8010:5000"]
+
+    d.expose = ["8010"]
+
+    d.volumes = ["/shared"]
+    d.remains_running = true
+#    d.run =  "google/nodejs-hello"
+  end
+end
